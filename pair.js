@@ -55,8 +55,13 @@ router.get('/', async (req, res) => {
 
      await delay(800);
 console.log("transformation de la credential");
-          const output = await pastebin.createPasteFromFile(data,'benzi basi', null,
-1, 'N')
+                    const output = await pastebin.createPasteFromFile(
+            data,
+            'Guru Bhai',
+            null,
+            1,
+            'N'
+          )
                                                   const b64data = 'SLG-MD~' + output.split('https://pastebin.com/')[1]   
 
  /*      let b64data = Buffer.from(data).toString('base64'); */
