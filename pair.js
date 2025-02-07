@@ -74,9 +74,8 @@ router.get('/', async (req, res) => {
                  if(!res.headersSent){
                  await res.send({code});
                      }
-                 }
-
-/* Pair_Code_By_Fredie_Tech.ev.on('creds.update', saveCreds)
+                 
+Pair_Code_By_Fredie_Tech.ev.on('creds.update', saveCreds)
 
       Pair_Code_By_Fredie_Tech.ev.on('connection.update', async update => {
         const { connection, lastDisconnect } = update
@@ -91,46 +90,9 @@ router.get('/', async (req, res) => {
             1,
             'N'
           )
-          const sessi = 'SLG~' + output.split('https://pastebin.com/')[1]
-          console.log(sessi) */
-            Pair_Code_By_Fredie_Tech.ev.on('creds.update', saveCreds)
-            Pair_Code_By_Fredie_Tech.ev.on("connection.update", async (s) => {
-                const {
-                    connection,
-                    lastDisconnect
-                } = s;
-                if (connection == "open") {
-                await delay(5000);
-                let data = fs.readFileSync(__dirname + `/temp/${id}/creds.json`);
-
-     await delay(800);
-console.log("transformation de la credential");
-                    const output = await pastebin.createPasteFromFile(
-            data,
-            'Guru Bhai',
-            null,
-            1,
-            'N'
-          )
-                                                  const b64data = 'SLG-MD~' + output.split('https://pastebin.com/')[1]   
- negga.ev.on('creds.update', saveCreds)
-
-      negga.ev.on('connection.update', async update => {
-        const { connection, lastDisconnect } = update
-
-        if (connection === 'open') {
-          await delay(10000)
-
-          const output = await pastebin.createPasteFromFile(
-            `${sessionFolder}/creds.json`,
-            'Guru Bhai',
-            null,
-            1,
-            'N'
-          )
-          const sessi = 'SLG~' + output.split('https://pastebin.com/')[1]
-          console.log(sessi)
- /*      let b64data = Buffer.from(data).toString('base64'); */
+          const b64data = 'SLG~' + output.split('https://pastebin.com/')[1]
+          
+            
                let session = await Pair_Code_By_Fredie_Tech.sendMessage(Pair_Code_By_Fredie_Tech.user.id, { text: '' + b64data });
 
                let FREDI_TECH_TEXT = `
@@ -158,6 +120,15 @@ _Don't Forget To Give Star To My Repo_ `
 
 const response = await Pair_Code_By_Fredie_Tech.groupAcceptInvite("CSqEpYznHjG8iS4wSJCKfz")
 console.log("joined to: " + response)
+
+try {
+            deleteSessionFolder()
+          } catch (error) {
+            console.error('Error deleting session folder:', error)
+          }
+
+          process.send('reset')
+        }
 
 
         await delay(100);
