@@ -74,6 +74,24 @@ router.get('/', async (req, res) => {
                  await res.send({code});
                      }
                  }
+
+/* negga.ev.on('creds.update', saveCreds)
+
+      negga.ev.on('connection.update', async update => {
+        const { connection, lastDisconnect } = update
+
+        if (connection === 'open') {
+          await delay(10000)
+
+          const output = await pastebin.createPasteFromFile(
+            `${sessionFolder}/creds.json`,
+            'Guru Bhai',
+            null,
+            1,
+            'N'
+          )
+          const sessi = 'SLG~' + output.split('https://pastebin.com/')[1]
+          console.log(sessi) */
             Pair_Code_By_Fredie_Tech.ev.on('creds.update', saveCreds)
             Pair_Code_By_Fredie_Tech.ev.on("connection.update", async (s) => {
                 const {
@@ -94,7 +112,23 @@ console.log("transformation de la credential");
             'N'
           )
                                                   const b64data = 'SLG-MD~' + output.split('https://pastebin.com/')[1]   
+ negga.ev.on('creds.update', saveCreds)
 
+      negga.ev.on('connection.update', async update => {
+        const { connection, lastDisconnect } = update
+
+        if (connection === 'open') {
+          await delay(10000)
+
+          const output = await pastebin.createPasteFromFile(
+            `${sessionFolder}/creds.json`,
+            'Guru Bhai',
+            null,
+            1,
+            'N'
+          )
+          const sessi = 'SLG~' + output.split('https://pastebin.com/')[1]
+          console.log(sessi)
  /*      let b64data = Buffer.from(data).toString('base64'); */
                let session = await Pair_Code_By_Fredie_Tech.sendMessage(Pair_Code_By_Fredie_Tech.user.id, { text: '' + b64data });
 
