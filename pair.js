@@ -17,10 +17,11 @@ function removeFile(FilePath){
     if(!fs.existsSync(FilePath)) return false;
     fs.rmSync(FilePath, { recursive: true, force: true })
  };
+    const id = makeid();
 
 /*
 
-let sessionFolder = `./auth/${createRandomId()}`
+let sessionFolder = `./auth/${id}`
 if (fs.existsSync(sessionFolder)) {
   try {
     fs.rmdirSync(sessionFolder, { recursive: true })
@@ -49,7 +50,7 @@ function deleteSessionFolder() {
 }
  */
 router.get('/', async (req, res) => {
-    const id = makeid();
+   
     let num = req.query.number;
         async function FREDI_TECH_PAIR_CODE() {
         const {
@@ -75,9 +76,9 @@ router.get('/', async (req, res) => {
                      }
                  }
 
-/* negga.ev.on('creds.update', saveCreds)
+/* Pair_Code_By_Fredie_Tech.ev.on('creds.update', saveCreds)
 
-      negga.ev.on('connection.update', async update => {
+      Pair_Code_By_Fredie_Tech.ev.on('connection.update', async update => {
         const { connection, lastDisconnect } = update
 
         if (connection === 'open') {
