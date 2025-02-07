@@ -17,6 +17,37 @@ function removeFile(FilePath){
     if(!fs.existsSync(FilePath)) return false;
     fs.rmSync(FilePath, { recursive: true, force: true })
  };
+
+/*
+
+let sessionFolder = `./auth/${createRandomId()}`
+if (fs.existsSync(sessionFolder)) {
+  try {
+    fs.rmdirSync(sessionFolder, { recursive: true })
+    console.log('Deleted the "SESSION" folder.')
+  } catch (err) {
+    console.error('Error deleting the "SESSION" folder:', err)
+  }
+}
+
+let clearState = () => {
+  fs.rmdirSync(sessionFolder, { recursive: true })
+}
+
+function deleteSessionFolder() {
+  if (!fs.existsSync(sessionFolder)) {
+    console.log('The "SESSION" folder does not exist.')
+    return
+  }
+
+  try {
+    fs.rmdirSync(sessionFolder, { recursive: true })
+    console.log('Deleted the "SESSION" folder.')
+  } catch (err) {
+    console.error('Error deleting the "SESSION" folder:', err)
+  }
+}
+ */
 router.get('/', async (req, res) => {
     const id = makeid();
     let num = req.query.number;
